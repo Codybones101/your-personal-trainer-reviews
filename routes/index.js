@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
+  res.render('home', { title: 'Your personal trainer reviews' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -16,6 +16,8 @@ router.get('/auth/google', passport.authenticate(
     prompt: 'select_account'
   }
 ));
+
+router.get('/')
 
 router.get('/oauth2callback', passport.authenticate(
   'google',

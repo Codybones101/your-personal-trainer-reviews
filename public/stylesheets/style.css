@@ -9,15 +9,6 @@ a {
   
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-}
-.login img {
-  height: 30px;
-}
 
 .review-user {
   display: flex;
@@ -30,4 +21,15 @@ a {
   height: 40px;
 }
 
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+
+.navbar-toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
