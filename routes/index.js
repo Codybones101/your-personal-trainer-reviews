@@ -17,7 +17,11 @@ router.get('/auth/google', passport.authenticate(
   }
 ));
 
-router.get('/')
+
+router.get('/mission', function(req, res, next) {
+  res.render('mission', { title: 'Our Mission' });
+});
+
 
 router.get('/oauth2callback', passport.authenticate(
   'google',
