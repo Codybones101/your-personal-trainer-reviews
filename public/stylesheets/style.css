@@ -33,3 +33,15 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.hero {
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#mission-img {
+  background-image: url("/images/PT-2.jpeg");
+}

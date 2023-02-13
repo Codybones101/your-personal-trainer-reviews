@@ -14,3 +14,11 @@ function index(req, res) {
 function newTrainer(req, res) {
     res.render('trainers/new')
 }
+
+// function create(req, res) {
+//     const trainer = new Trainer(req.body);
+//     trainer.userTrainer = req.use._id;
+//     trainer.save(function(err) {
+//         if(err) return return res.redirect('/trainers/home');
+//         res.redirect(`/trainers/${trainer._id}`);
+//     })
