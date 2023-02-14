@@ -1,9 +1,11 @@
+const trainer = require('../models/trainer');
 const Trainer = require('../models/trainer');
 
 module.exports = {
     index,
     new: newTrainer,
     create,
+    show,
 }
 
 function index(req, res) {
@@ -23,5 +25,11 @@ function create(req, res) {
         if(err) return res.redirect('/');
         res.redirect('/trainers');
     })};
+
+    function show(req, res) {
+        Trainer.findById(req.params.id, (err, trainer) => {
+            res.render('trainers/show', { title: 'Details', trainer })
+        })
+    }
     
 
