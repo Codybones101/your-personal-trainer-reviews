@@ -2,15 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    rating: Number,
-    content: String,
+    rating: {
+      type: String,
+      required: true,
+    }, 
+    content: {
+      type: String,
+      required: true,
+    }, 
 }); 
 
 const trainerSchema = new Schema({
   name: String,
   location: String,
-  email: String,
-  avatar: String,
+  description: String,
+  userTrainer: {
+    type: Schema.Types.ObjectId,
+    ref: 'User', 
+    required: true,
+  }, 
+  userName: String,
+  userAvatar: String,
   reviews: [reviewSchema],
 }, {
   timestamps: true,

@@ -1,5 +1,23 @@
 
-
-
 <h1>All Trainers</h1>
 <a href="/trainers/new">Add a trainer</a>
+
+<table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>description</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% trainers.forEach((l) => { %>
+      <tr>
+        <td><%= l.name %></td>
+        <td><%= l.location %></td>
+        <td><%= l.description %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>

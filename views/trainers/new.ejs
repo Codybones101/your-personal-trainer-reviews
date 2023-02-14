@@ -1,3 +1,11 @@
+<%- include('../partials/header') %>
+<form action="/trainers" method="POST">a
+    <!-- Be sure name attributes of inputs match the model properties -->
+    <label for="">name<input type="text" name="name"></label>
+    
+    <label for="">location<input type="text" name="location"></label>
 
-<button>Add Trainer</button>
-<form action="/trainers" method="POST">Submit Personal Trainer</form>
+    <label for="">description<input type="text" name="description"></label>
+
+    <button type="submit">ADD TRAINER</button>
+  </form>
