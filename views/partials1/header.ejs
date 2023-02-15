@@ -32,14 +32,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/trainers">Trainers</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reviews</a>
-            </li>
-            
             <% if (user) { %>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Personal Trainers</a>
-            </li>
             <% } %>
           </ul>
           <% if (!user) { %>
@@ -71,6 +64,6 @@
       </div>
     </nav>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- <p>Welcome to <%= title %></p> -->
   </body>
 </html>

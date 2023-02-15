@@ -1,4 +1,3 @@
-
 const Trainer = require('../models/trainer');
 
 module.exports = {
