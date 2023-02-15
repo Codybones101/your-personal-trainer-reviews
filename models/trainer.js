@@ -10,13 +10,22 @@ const reviewSchema = new Schema({
       type: String,
       required: true,
     }, 
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User', 
+      required: true,
+    }, 
+    userName: String,
+    userAvatar: String,
+  }, {
+    timestamps: true,
 }); 
 
 const trainerSchema = new Schema({
   name: String,
   location: String,
   description: String,
-  userTrainer: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User', 
     required: true,

@@ -1,4 +1,4 @@
-const trainer = require('../models/trainer');
+
 const Trainer = require('../models/trainer');
 
 module.exports = {
@@ -19,8 +19,8 @@ function newTrainer(req, res) {
 }
 
 function create(req, res) {
-    req.body.userTrainer = req.user._id;
-    const trainer = new Trainer(req.body, req.body.userTrainer);
+    req.body.user = req.user._id;
+    const trainer = new Trainer(req.body);
     trainer.save(function(err) {
         if(err) return res.redirect('/');
         res.redirect('/trainers');
@@ -31,5 +31,7 @@ function create(req, res) {
             res.render('trainers/show', { title: 'Details', trainer })
         })
     }
+
+    
     
 

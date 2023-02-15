@@ -1,11 +1,11 @@
-// var express = require('express');
-// var router = express.Router();
-// var reviewsCtrl = require('../controller/trainers');
+var express = require('express');
+var router = express.Router();
+var reviewsCtrl = require('../controller/reviews');
 
-// /* GET users listing. */
-// router.get('/', reviewsCtrl.index);
-// router.get('/new', reviewsCtrl.new);
-
+/* GET users listing. */
+router.post('/trainers/:id/reviews', reviewsCtrl.create);
 
 
-// module.exports = router;
+
+
+module.exports = router;
