@@ -47,7 +47,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/trainers', trainersRouter);
 app.use('/', reviewsRouter);
-app.use('/reviews', reviewsRouter);
+
 
 app.use(function (req, res, next) {
   res.locals.user = req.user;

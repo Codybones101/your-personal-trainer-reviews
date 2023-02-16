@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-<h1 class="trainer" id="trainer">All Trainers</h1>
 <a href="/trainers/new">Add a trainer</a>
 <table class="table table-dark table-striped">
     <thead>
@@ -7,6 +6,8 @@
         <th>Name</th>
         <th>Location</th>
         <th>Description</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,13 @@
         <td><%= l.name %></td>
         <td><%= l.location %></td>
         <td><%= l.description %></td>
-        <td><a href="/trainers/<%= l._id %>">Details</a></td>
+        <td><a href="/trainers/<%= l._id %>" class="btn btn-info">Details</a></td>
+        <% if (user.googleId === l.user.googleId) { %>
+          <td><a href="/trainers/<%= l.id %>/edit" class="btn btn-secondary">Edit</a></td>
+          <td><form action="/trainers/<%= l.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form></td>
+          <% } %>
       </tr>
       <% }) %>
     </tbody>
