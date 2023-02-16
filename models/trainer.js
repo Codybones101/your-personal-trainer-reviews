@@ -25,6 +25,7 @@ const trainerSchema = new Schema({
   name: String,
   location: String,
   description: String,
+  photo: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User', 

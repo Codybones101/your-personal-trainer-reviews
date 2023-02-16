@@ -1,14 +1,9 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #E8E5E3;
 }
-
-a {
-  color: #00B7FF;
-
-  
-}
-
 
 .review-user {
   display: flex;
@@ -42,12 +37,74 @@ a {
 
 }
 
+#home-img {
+  background-image: url("/images/gym.jpeg");
+}
+
+.home {
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #mission-img {
   background-image: url("/images/PT-2.jpeg");
 }
 
-
-
 .frm {
   width: 10vw;
+}
+
+.trainerdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.nav-logo > img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.hometitle {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-main {
+  all: unset;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-main > label {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 5px;
+  /* border-radius: 8px;
+  border: solid 1px black; */
+}
+
+.form-main > label > input {
+  min-width: 20ch;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+container {
+  display: inline-block;
+  width: 100%;
+  padding: 40px 40px;
+  background-color: lightgray;
 }

@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
-<table>
-    <td><%= trainer.name %></td>
-    <td><%= trainer.location %></td>
-</table>
+<div class="trainerdiv">
+  <div><img src="<%= trainer.photo %>" alt="" height="300px"></div>
+    <div><%= trainer.name %></div>
+    <div><%= trainer.location %></div>
+    <div><%= trainer.description %></div>
+</div>
 <% if (user) { %>
     <form id="add-review-form" method="POST"
       action="/trainers/<%= trainer._id %>/reviews">

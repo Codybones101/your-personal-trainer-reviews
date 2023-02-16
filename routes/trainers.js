@@ -10,6 +10,7 @@ router.get('/:id', trainersCtrl.show);
 router.get('/:id/edit', trainersCtrl.edit);
 router.post('/', trainersCtrl.create);
 router.delete('/:id', ensuredLogIn, trainersCtrl.delTrainer);
+router.put('/:id', ensuredLogIn, trainersCtrl.update);
 
 
 module.exports = router;

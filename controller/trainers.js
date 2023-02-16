@@ -8,6 +8,7 @@ module.exports = {
 	show,
 	delTrainer,
 	edit,
+    update,
 };
 
 function index(req, res) {
@@ -48,7 +49,22 @@ function delTrainer(req, res) {
 }
 
 function edit(req, res) {
-    Trainer.findById(req.params.body, (err, trainer) => {
+    Trainer.findById(req.params.id, (err, trainer) => {
         res.render('trainers/edit', { title: 'edit trainer', trainer })
     })
 }
+
+
+
+function update(req, res) {
+    Trainer.findOneAndUpdate(
+      {_id: req.params.id, user: req.user._id},
+      req.body,
+      {new: true},
+      function(err, trainer) {
+        if (err || !trainer) return res.redirect('/trainers');
+        res.redirect(`/trainers/${trainer._id}`);
+      }
+    );
+  }
+
