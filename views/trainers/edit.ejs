@@ -1,11 +1,16 @@
-<form action="/trainers/<%= trainer._id %>?_method=PUT" method="POST">
-    <!-- Be sure name attributes of inputs match the model properties -->
-    <label for="">Name<input type="text" name="name" value="<%= trainer.name %>"></label>
-    
-    <label for="">Location<input type="text" name="location" value="<%= trainer.location %>"></label>
+<%- include('../partials/header') %>
 
-    <label for="">description<input type="text" name="description" value="<%= trainer.description %>"></label>
-    <label for="">photo<input type="text" name="photo" value="<%= trainer.photo %>"></label>
+<form class="editpage" action="/trainers/<%= trainer._id %>?_method=PUT" method="POST">
+  <!-- Be sure name attributes of inputs match the model properties -->
+  <label for="">Name<input type="text" name="name" value="<%= trainer.name %>"></label>
+  
+  <label for="">Location<input type="text" name="location" value="<%= trainer.location %>"></label>
+  
+  <label for="">description<input type="text" name="description" value="<%= trainer.description %>"></label>
+  <label for="">photo<input type="text" name="photo" value="<%= trainer.photo %>"></label>
+  
+  <button type="submit">Edit Trainer</button>
+</form>
 
-    <button type="submit">Edit Trainer</button>
-  </form>
+  
+

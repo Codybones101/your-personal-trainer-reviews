@@ -34,7 +34,6 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 #home-img {
@@ -80,6 +79,14 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
+  font-family: Georgia;
+  font-size: 50px;;
+  margin-top: 100px;
+}
+
+.hometitle:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
 }
 
 .form-main {
@@ -92,8 +99,6 @@ body {
   flex-direction: column;
   width: 50%;
   padding: 5px;
-  /* border-radius: 8px;
-  border: solid 1px black; */
 }
 
 .form-main > label > input {
@@ -103,6 +108,38 @@ body {
 }
 
 container {
+  display: inline-block;
+  width: 100%;
+  padding: 40px 40px;
+  background-color: lightgray;
+}
+
+#add-review-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#note {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#rating {
+  padding: 10px;
+}
+
+#reviewbox {
+  padding: 10px;
+}
+
+#mission {
+  font-family: Georgia;
+  padding: 30px;
+}
+
+.editpage {
   display: inline-block;
   width: 100%;
   padding: 40px 40px;

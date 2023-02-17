@@ -8,9 +8,9 @@
 <% if (user) { %>
     <form id="add-review-form" method="POST"
       action="/trainers/<%= trainer._id %>/reviews">
-      <label>Review:</label>
+      <label id="reviewbox">Review:</label>
       <textarea name="content"></textarea>
-      <label>Rating:</label>
+      <label id="rating">Rating:</label>
       <select name="rating">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -61,6 +61,6 @@
       </tbody>
     </table>
   <% } else { %>
-    <h5>No Reviews Yet</h5>
+    <h5 id="note">No Reviews Yet</h5>
   <% } %>
  
