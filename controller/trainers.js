@@ -1,4 +1,3 @@
-const trainer = require('../models/trainer');
 const Trainer = require('../models/trainer');
 
 module.exports = {
@@ -8,15 +7,15 @@ module.exports = {
 	show,
 	delTrainer,
 	edit,
-    update,
+	update,
 };
 
 function index(req, res) {
 	Trainer.find({})
-    .populate('user')
-    .exec(function(err, trainers){
-        res.render('trainers/index', {title: 'All Trainers', trainers})
-    })
+		.populate('user')
+		.exec(function (err, trainers) {
+			res.render('trainers/index', { title: 'All Trainers', trainers });
+		});
 }
 
 function newTrainer(req, res) {
@@ -39,32 +38,29 @@ function show(req, res) {
 }
 
 function delTrainer(req, res) {
-    console.log('working')
+	console.log('working');
 	Trainer.findOneAndDelete(
-        { _id: req.params.id, user: req.user._id},
-        function(err) {
-            res.redirect('/')
-        }
-    )
+		{ _id: req.params.id, user: req.user._id },
+		function (err) {
+			res.redirect('/trainers');
+		}
+	);
 }
 
 function edit(req, res) {
-    Trainer.findById(req.params.id, (err, trainer) => {
-        res.render('trainers/edit', { title: 'edit trainer', trainer })
-    })
+	Trainer.findById(req.params.id, (err, trainer) => {
+		res.render('trainers/edit', { title: 'edit trainer', trainer });
+	});
 }
 
-
-
 function update(req, res) {
-    Trainer.findOneAndUpdate(
-      {_id: req.params.id, user: req.user._id},
-      req.body,
-      {new: true},
-      function(err, trainer) {
-        if (err || !trainer) return res.redirect('/trainers');
-        res.redirect(`/trainers/${trainer._id}`);
-      }
-    );
-  }
-
+	Trainer.findOneAndUpdate(
+		{ _id: req.params.id, user: req.user._id },
+		req.body,
+		{ new: true },
+		function (err, trainer) {
+			if (err || !trainer) return res.redirect('/trainers');
+			res.redirect(`/trainers/${trainer._id}`);
+		}
+	);
+}

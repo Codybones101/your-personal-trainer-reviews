@@ -3,7 +3,6 @@ const Trainer = require('../models/trainer');
 module.exports = {
 	create,
 	delete: deleteReview,
-	// edit,
 };
 
 function create(req, res) {
@@ -34,8 +33,3 @@ function deleteReview(req, res, next) {
 	);
 }
 
-// function edit(req, res) {}
-// Trainer.findOne({ 'trainers._id': req.params.id }, function (err, trainer) {
-// 	const comment = trainer.reviews.id(req.params.id);
-// 	res.render('trainers/edit', { comment });
-// });

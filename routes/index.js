@@ -3,13 +3,11 @@ var router = express.Router();
 const passport = require('passport');
 var ensuredLogIn = require('../config/ensureLoggedIn');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('home', { title: 'Your personal trainer reviews' });
 });
 
 router.get('/auth/google', passport.authenticate(
-  // Which passport strategy is being used?
   'google',
   {
     scope: ['profile', 'email'],
@@ -18,11 +16,9 @@ router.get('/auth/google', passport.authenticate(
   }
 ));
 
-
 router.get('/mission', function(req, res, next) {
   res.render('mission', { title: 'Our Mission' });
 });
-
 
 router.get('/oauth2callback', passport.authenticate(
   'google',
